@@ -1,0 +1,99 @@
+{
+  "hero": {
+            "enabled": true,
+            "variant": "carousel",
+            "entries": [
+                            {
+                                   "layout": "image-right",
+                                "alignment": "left",
+                               "background": {
+                                                  "type": "image",
+                                                 "image": {
+                                                            "url": "https://example.com/images/hero-summer-collection.jpg",
+                                                            "alt": "Summer Collection 2025 - Vibrant clothing display"
+                                                          },
+                                               "overlay": {
+                                                            "enabled": true,
+                                                            "opacity": 0.3,
+                                                              "color": "#000000"
+                                                          }
+                                              },
+                                    "title": "Summer Collection 2025",
+                                 "subtitle": "Discover the hottest trends of the season with our exclusive summer lineup",
+                              "description": "From breezy dresses to lightweight shirts, find everything you need to stay stylish and comfortable all summer long. Shop now and enjoy up to 40% off on selected items.",
+                                      "cta": {
+                                               "enabled": true,
+                                               "entries": [
+                                                            {
+                                                                "label": "Shop Now",
+                                                                  "url": "https://example.com/collections/summer-2025",
+                                                              "variant": "primary"
+                                                            },
+                                                            {
+                                                                "label": "View Lookbook",
+                                                                  "url": "https://example.com/lookbook/summer-2025",
+                                                              "variant": "outline"
+                                                            }
+                                                          ]
+                                             }
+                            },
+                            {
+                                "layout": "full-width",
+                                "alignment": "center",
+                                "background": {
+                                "type": "video",
+                                "video": {
+                                    "url": "https://example.com/videos/brand-story.mp4",
+                                    "autoPlay": true,
+                                    "loop": true,
+                                    "muted": true
+                                },
+                                "overlay": {
+                                    "enabled": true,
+                                    "opacity": 0.5,
+                                    "color": "#1a1a1a"
+                                }
+                                },
+                                "title": "Crafted with Passion, Designed for You",
+                                "subtitle": "Experience the perfect blend of comfort, style, and sustainability",
+                                "description": "Every piece in our collection tells a story of craftsmanship and dedication. We source ethically, design thoughtfully, and create clothing that makes you look and feel amazing.",
+                                "cta": {
+                                "enabled": true,
+                                "entries": [
+                                    {
+                                    "label": "Discover Our Story",
+                                    "url": "https://example.com/about",
+                                    "variant": "secondary"
+                                    }
+                                ]
+                                }
+                            },
+                            {
+                                "layout": "split",
+                                "alignment": "right",
+                                "background": {
+                                "type": "color",
+                                "color": "#f5f5f5"
+                                },
+                                "title": "New Arrivals Just Dropped",
+                                "subtitle": "Be the first to explore our latest collection of premium fashion essentials",
+                                "description": "Fresh styles have landed! From statement pieces to everyday basics, discover what's new this week. Limited quantities available, so shop before they're gone.",
+                                "cta": {
+                                "enabled": true,
+                                "entries": [
+                                    {
+                                    "label": "Shop New Arrivals",
+                                    "url": "https://example.com/collections/new-arrivals",
+                                    "variant": "primary"
+                                    },
+                                    {
+                                    "label": "Subscribe for Updates",
+                                    "url": "https://example.com/newsletter",
+                                    "variant": "link"
+                                    }
+                                ]
+                                }
+                            }
+                        ]
+          }
+}

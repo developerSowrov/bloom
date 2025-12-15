@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/axios/interceptors/request.ts",
+    "src/services/redux/slice/cart.ts",
+    ".next/dev/types/**/*.ts"
+, "src/components/layout/header/SearchInput.jsx", "src/components/layout/header/SearchResultItem.jsx", "src/components/layout/header/Basket.jsx", "src/components/layout/ScrollById.jsx", "src/components/common/product/ProductCard.jsx", "src/components/common/product/ProductCardSkeleton.jsx", "src/components/forPages/home/CustomersComment/CustomerCommentCard.jsx", "src/components/layout/footer/items.js", "src/components/layout/PageLoaderWhiteScreen.jsx", "src/components/layout/PageLoadingProgressBar.jsx", "src/components/layout/HorizontalLine.jsx", "src/components/layout/footer/BelowFooter.jsx", "src/components/layout/footer/index.jsx", "src/services/reactQuery/searchProduct.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

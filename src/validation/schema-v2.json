@@ -1,0 +1,640 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://apidoxyllc.com/schemas/theme-config.schema.json",
+  "title": "Theme Configuration Schema",
+  "description": "Schema for SaaS e-commerce theme customization",
+  "version": "2.0.0",
+  "type": "object",
+  "required": ["header", "footer"],
+  "additionalProperties": false,
+  "properties": {
+    "header": {
+      "type": "object",
+      "x-type": "section",
+      "required": ["enabled", "propertyOrder", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the header section"
+        },
+        "propertyOrder": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "default": ["logo", "navigations", "searchbar", "commerce"],
+          "items": {
+            "type": "string",
+            "enum": ["logo", "navigations", "searchbar", "commerce"]
+          },
+          "description": "Order of header elements from left to right"
+        },
+        "items": {
+          "type": "object",
+          "required": ["logo"],
+          "additionalProperties": false,
+          "properties": {
+            "logo": {
+              "type": "object",
+              "x-type": "image-link",
+              "required": ["url"],
+              "additionalProperties": false,
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^(https?://|/)",
+                  "minLength": 1,
+                  "maxLength": 2048,
+                  "description": "Logo image URL (absolute or relative path)"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "description": "Alternative text for accessibility"
+                }
+              }
+            },
+            "navigations": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "x-type": "navigation-link",
+                "required": ["sequence", "title", "url"],
+                "additionalProperties": false,
+                "properties": {
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Display order (must be unique)"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 25,
+                    "description": "Navigation link text"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?://|/|#)",
+                    "minLength": 1,
+                    "maxLength": 2048,
+                    "description": "Link destination (absolute URL, relative path, or anchor)"
+                  }
+                }
+              },
+              "description": "Navigation menu items"
+            },
+            "searchbar": {
+              "type": "object",
+              "x-type": "input",
+              "required": ["enabled"],
+              "additionalProperties": false,
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Show search bar in header"
+                },
+                "searchOn": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 4,
+                  "uniqueItems": true,
+                  "default": ["all"],
+                  "items": {
+                    "type": "string",
+                    "enum": ["category", "popular", "mostSale", "all"]
+                  },
+                  "description": "Search scopes available to users"
+                },
+                "preference": {
+                  "type": "string",
+                  "enum": ["category", "popular", "mostSale", "none"],
+                  "default": "none",
+                  "description": "Default search scope"
+                }
+              }
+            },
+            "commerce": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "cart": {
+                  "type": "object",
+                  "x-type": "button",
+                  "required": ["enabled"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean",
+                      "default": true,
+                      "description": "Show cart icon in header"
+                    },
+                    "click": {
+                      "type": "object",
+                      "required": ["invoke", "behaviour"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "invoke": {
+                          "type": "boolean",
+                          "default": false,
+                          "description": "Trigger action on click"
+                        },
+                        "behaviour": {
+                          "type": "string",
+                          "enum": ["mini-panel", "overlay", "redirect", "modal"],
+                          "default": "mini-panel",
+                          "description": "Action type when clicked"
+                        }
+                      },
+                      "description": "Click behavior configuration"
+                    },
+                    "hover": {
+                      "type": "object",
+                      "required": ["invoke", "behaviour"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "invoke": {
+                          "type": "boolean",
+                          "default": false,
+                          "description": "Trigger action on hover (desktop only)"
+                        },
+                        "behaviour": {
+                          "type": "string",
+                          "enum": ["mini-panel", "overlay", "redirect", "modal"],
+                          "default": "mini-panel",
+                          "description": "Action type when hovered"
+                        }
+                      },
+                      "description": "Hover behavior configuration"
+                    }
+                  }
+                },
+                "favourite": {
+                  "type": "object",
+                  "x-type": "button",
+                  "required": ["enabled"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean",
+                      "default": true,
+                      "description": "Show favourite/wishlist icon in header"
+                    },
+                    "click": {
+                      "type": "object",
+                      "required": ["invoke", "behaviour"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "invoke": {
+                          "type": "boolean",
+                          "default": false,
+                          "description": "Trigger action on click"
+                        },
+                        "behaviour": {
+                          "type": "string",
+                          "enum": ["mini-panel", "overlay", "redirect", "modal"],
+                          "default": "mini-panel",
+                          "description": "Action type when clicked"
+                        }
+                      },
+                      "description": "Click behavior configuration"
+                    },
+                    "hover": {
+                      "type": "object",
+                      "required": ["invoke", "behaviour"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "invoke": {
+                          "type": "boolean",
+                          "default": false,
+                          "description": "Trigger action on hover (desktop only)"
+                        },
+                        "behaviour": {
+                          "type": "string",
+                          "enum": ["mini-panel", "overlay", "redirect", "modal"],
+                          "default": "mini-panel",
+                          "description": "Action type when hovered"
+                        }
+                      },
+                      "description": "Hover behavior configuration"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "x-type": "section",
+      "required": ["enabled"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the hero section"
+        },
+        "layout": {
+          "type": "string",
+          "enum": ["simple", "split", "image-left", "image-right", "full-width"],
+          "default": "simple",
+          "description": "Hero section layout style"
+        },
+        "alignment": {
+          "type": "string",
+          "enum": ["left", "center", "right"],
+          "default": "left",
+          "description": "Text alignment within hero section"
+        },
+        "background": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["image", "video", "color"],
+              "default": "image",
+              "description": "Background type"
+            },
+            "image": {
+              "type": "object",
+              "x-type": "bg-image",
+              "required": ["url"],
+              "additionalProperties": false,
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^(https?://|/)",
+                  "minLength": 1,
+                  "maxLength": 2048,
+                  "description": "Background image URL"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 50,
+                  "description": "Alternative text for background image"
+                }
+              },
+              "description": "Image background configuration (required if type=image)"
+            },
+            "video": {
+              "type": "object",
+              "x-type": "bg-video",
+              "required": ["url"],
+              "additionalProperties": false,
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^(https?://|/).*\\.(mp4|webm|ogg)$",
+                  "minLength": 1,
+                  "maxLength": 2048,
+                  "description": "Background video URL (mp4, webm, or ogg)"
+                },
+                "autoPlay": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Automatically play video on load"
+                },
+                "loop": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Loop video continuously"
+                },
+                "muted": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Mute video audio (recommended for autoplay)"
+                }
+              },
+              "description": "Video background configuration (required if type=video)"
+            },
+            "color": {
+              "type": "string",
+              "x-type": "bg-color",
+              "oneOf": [
+                {
+                  "pattern": "^#[0-9a-fA-F]{3}$",
+                  "description": "3-digit hex color (e.g., #fff)"
+                },
+                {
+                  "pattern": "^#[0-9a-fA-F]{6}$",
+                  "description": "6-digit hex color (e.g., #ffffff)"
+                },
+                {
+                  "pattern": "^#[0-9a-fA-F]{8}$",
+                  "description": "8-digit hex color with alpha (e.g., #ffffffff)"
+                },
+                {
+                  "pattern": "^rgb\\(\\s*\\d+\\s*,\\s*\\d+\\s*,\\s*\\d+\\s*\\)$",
+                  "description": "RGB color (e.g., rgb(255, 255, 255))"
+                },
+                {
+                  "pattern": "^rgba\\(\\s*\\d+\\s*,\\s*\\d+\\s*,\\s*\\d+\\s*,\\s*[0-9.]+\\s*\\)$",
+                  "description": "RGBA color (e.g., rgba(255, 255, 255, 0.5))"
+                },
+                {
+                  "enum": [
+                    "black", "white", "red", "blue", "green", "yellow", "orange", 
+                    "purple", "pink", "gray", "grey", "brown", "cyan", "magenta",
+                    "transparent"
+                  ],
+                  "description": "CSS color keyword"
+                }
+              ],
+              "description": "Background color (required if type=color)"
+            },
+            "overlay": {
+              "type": "object",
+              "x-type": "overlay-color",
+              "required": ["enabled"],
+              "additionalProperties": false,
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Add color overlay on top of background"
+                },
+                "opacity": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "default": 0.4,
+                  "description": "Overlay transparency (0=transparent, 1=opaque)"
+                },
+                "color": {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}$",
+                  "default": "#000000",
+                  "description": "Overlay color (hex format)"
+                }
+              },
+              "description": "Optional color overlay for backgrounds"
+            }
+          },
+          "description": "Hero background configuration"
+        },
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 60,
+              "description": "Main hero heading (SEO important)"
+            },
+            "subtitle": {
+              "type": "string",
+              "minLength": 5,
+              "maxLength": 160,
+              "description": "Hero subheading or tagline"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 300,
+              "description": "Hero description paragraph"
+            },
+            "buttons": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "x-type": "button",
+                "required": ["label", "url"],
+                "additionalProperties": false,
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 25,
+                    "description": "Button text"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^(https?://|/|#)",
+                    "minLength": 1,
+                    "maxLength": 2048,
+                    "description": "Button destination URL"
+                  },
+                  "variant": {
+                    "type": "string",
+                    "enum": ["primary", "secondary", "outline", "link"],
+                    "default": "primary",
+                    "description": "Button visual style"
+                  }
+                }
+              },
+              "description": "Call-to-action buttons"
+            }
+          },
+          "description": "Hero content items"
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "x-type": "section",
+      "required": ["enabled", "propertyOrder", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the footer section"
+        },
+        "propertyOrder": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "default": ["brand", "columns", "legal"],
+          "items": {
+            "type": "string",
+            "enum": ["brand", "columns", "legal"]
+          },
+          "description": "Order of footer sections (top to bottom)"
+        },
+        "items": {
+          "type": "object",
+          "required": ["brand", "columns", "legal"],
+          "additionalProperties": false,
+          "properties": {
+            "brand": {
+              "type": "object",
+              "required": ["logo"],
+              "additionalProperties": false,
+              "properties": {
+                "logo": {
+                  "type": "object",
+                  "x-type": "image-link",
+                  "required": ["url"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "pattern": "^(https?://|/)",
+                      "minLength": 1,
+                      "maxLength": 2048,
+                      "description": "Footer logo URL"
+                    },
+                    "alt": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 50,
+                      "description": "Alternative text for footer logo"
+                    }
+                  }
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 10,
+                  "maxLength": 300,
+                  "description": "Company description or tagline"
+                },
+                "socialLinks": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 10,
+                  "items": {
+                    "type": "object",
+                    "x-type": "navigation-link",
+                    "required": ["platform", "url"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "platform": {
+                        "type": "string",
+                        "enum": [
+                          "facebook", "whatsapp", "linkedin", "instagram", 
+                          "youtube", "pinterest", "tiktok", "twitter", 
+                          "discord", "telegram"
+                        ],
+                        "description": "Social media platform"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^https?://",
+                        "minLength": 1,
+                        "maxLength": 2048,
+                        "description": "Social media profile URL (must be https)"
+                      }
+                    }
+                  },
+                  "description": "Social media links"
+                }
+              }
+            },
+            "columns": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 6,
+              "items": {
+                "type": "object",
+                "required": ["title"],
+                "additionalProperties": false,
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 20,
+                    "description": "Column heading"
+                  },
+                  "links": {
+                    "type": "array",
+                    "x-type": "navigation-link",
+                    "minItems": 0,
+                    "maxItems": 15,
+                    "items": {
+                      "type": "object",
+                      "required": ["label", "url"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "minLength": 2,
+                          "maxLength": 50,
+                          "description": "Link text"
+                        },
+                        "url": {
+                          "type": "string",
+                          "format": "uri",
+                          "pattern": "^(https?://|/|#)",
+                          "minLength": 1,
+                          "maxLength": 2048,
+                          "description": "Link destination"
+                        }
+                      }
+                    },
+                    "description": "Links in this column"
+                  }
+                }
+              },
+              "description": "Footer navigation columns"
+            },
+            "legal": {
+              "type": "object",
+              "required": ["copyright"],
+              "additionalProperties": false,
+              "properties": {
+                "copyright": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 120,
+                  "description": "Copyright text (e.g., © 2025 Company Name)"
+                },
+                "links": {
+                  "type": "array",
+                  "minItems": 0,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "object",
+                    "x-type": "link",
+                    "required": ["url"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 50,
+                        "description": "Link text (e.g., Privacy Policy)"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "pattern": "^(https?://|/)",
+                        "minLength": 1,
+                        "maxLength": 2048,
+                        "description": "Legal document URL"
+                      }
+                    }
+                  },
+                  "description": "Legal/policy links (Privacy, Terms, etc.)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

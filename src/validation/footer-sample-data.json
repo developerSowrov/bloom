@@ -1,0 +1,170 @@
+{
+  "footer": {
+    "enabled": true,
+    "propertyOrder": ["brand", "columns", "legal"],
+    "entries": {
+      "brand": {
+        "logo": {
+          "url": "https://example.com/images/logo-white.svg",
+          "alt": "Bloom Fashion Logo"
+        },
+        "description": "Bloom is your destination for contemporary fashion that celebrates individuality and sustainability. We believe in creating timeless pieces that empower you to express yourself confidently.",
+        "socialLinks": {
+          "enabled": true,
+          "entries": [
+            {
+              "platform": "facebook",
+              "url": "https://facebook.com/bloomfashion"
+            },
+            {
+              "platform": "instagram",
+              "url": "https://instagram.com/bloomfashion"
+            },
+            {
+              "platform": "twitter",
+              "url": "https://twitter.com/bloomfashion"
+            },
+            {
+              "platform": "youtube",
+              "url": "https://youtube.com/@bloomfashion"
+            },
+            {
+              "platform": "pinterest",
+              "url": "https://pinterest.com/bloomfashion"
+            }
+          ]
+        }
+      },
+      "columns": {
+        "enabled": true,
+        "entries": [
+          {
+            "title": "Shop",
+            "titleUrl": "https://example.com/collections",
+            "entries": [
+              {
+                "label": "New Arrivals",
+                "url": "https://example.com/collections/new-arrivals"
+              },
+              {
+                "label": "Women's Clothing",
+                "url": "https://example.com/collections/womens"
+              },
+              {
+                "label": "Men's Clothing",
+                "url": "https://example.com/collections/mens"
+              },
+              {
+                "label": "Accessories",
+                "url": "https://example.com/collections/accessories"
+              },
+              {
+                "label": "Sale",
+                "url": "https://example.com/collections/sale"
+              }
+            ]
+          },
+          {
+            "title": "Customer Service",
+            "titleUrl": "https://example.com/support",
+            "entries": [
+              {
+                "label": "Contact Us",
+                "url": "https://example.com/contact"
+              },
+              {
+                "label": "Shipping Information",
+                "url": "https://example.com/shipping"
+              },
+              {
+                "label": "Returns & Exchanges",
+                "url": "https://example.com/returns"
+              },
+              {
+                "label": "Size Guide",
+                "url": "https://example.com/size-guide"
+              },
+              {
+                "label": "FAQ",
+                "url": "https://example.com/faq"
+              },
+              {
+                "label": "Track Order",
+                "url": "https://example.com/track-order"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "titleUrl": "https://example.com/about",
+            "entries": [
+              {
+                "label": "About Us",
+                "url": "https://example.com/about"
+              },
+              {
+                "label": "Our Story",
+                "url": "https://example.com/story"
+              },
+              {
+                "label": "Sustainability",
+                "url": "https://example.com/sustainability"
+              },
+              {
+                "label": "Careers",
+                "url": "https://example.com/careers"
+              },
+              {
+                "label": "Press & Media",
+                "url": "https://example.com/press"
+              }
+            ]
+          },
+          {
+            "title": "Resources",
+            "titleUrl": "https://example.com/resources",
+            "entries": [
+              {
+                "label": "Blog",
+                "url": "https://example.com/blog"
+              },
+              {
+                "label": "Style Guide",
+                "url": "https://example.com/style-guide"
+              },
+              {
+                "label": "Gift Cards",
+                "url": "https://example.com/gift-cards"
+              },
+              {
+                "label": "Student Discount",
+                "url": "https://example.com/student-discount"
+              }
+            ]
+          }
+        ]
+      },
+      "legal": {
+        "copyright": "© 2025 Bloom Fashion. All rights reserved.",
+        "links": [
+          {
+            "label": "Privacy Policy",
+            "url": "https://example.com/privacy"
+          },
+          {
+            "label": "Terms of Service",
+            "url": "https://example.com/terms"
+          },
+          {
+            "label": "Cookie Policy",
+            "url": "https://example.com/cookies"
+          },
+          {
+            "label": "Accessibility",
+            "url": "https://example.com/accessibility"
+          }
+        ]
+      }
+    }
+  }
+}

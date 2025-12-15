@@ -1,0 +1,76 @@
+{
+  "header": {
+    "enabled": true,
+    "propertyOrder": ["logo", "navigations", "searchbar", "commerce"],
+    "entries": {
+      "logo": {
+        "enabled": true,
+        "url": "https://example.com/images/logo.svg",
+        "alt": "Bloom Fashion Logo"
+      },
+      "navigations": {
+        "enabled": true,
+        "entries": [
+          {
+            "sequence": 1,
+            "title": "New Arrivals",
+            "url": "/collections/new-arrivals"
+          },
+          {
+            "sequence": 2,
+            "title": "Women",
+            "url": "/collections/women"
+          },
+          {
+            "sequence": 3,
+            "title": "Men",
+            "url": "/collections/men"
+          },
+          {
+            "sequence": 4,
+            "title": "Sale",
+            "url": "/sale"
+          },
+          {
+            "sequence": 5,
+            "title": "About",
+            "url": "/about"
+          }
+        ]
+      },
+      "searchbar": {
+        "enabled": true,
+        "searchOn": ["category", "popular", "all"],
+        "preference": "popular"
+      },
+      "commerce": {
+        "enabled": true,
+        "propertyOrder": ["favourite", "cart"],
+        "entries": {
+          "cart": {
+            "enabled": true,
+            "click": {
+              "invoke": true,
+              "behaviour": "mini-panel"
+            },
+            "hover": {
+              "invoke": false,
+              "behaviour": "mini-panel"
+            }
+          },
+          "favourite": {
+            "enabled": true,
+            "click": {
+              "invoke": true,
+              "behaviour": "redirect"
+            },
+            "hover": {
+              "invoke": false,
+              "behaviour": "mini-panel"
+            }
+          }
+        }
+      }
+    }
+  }
+}

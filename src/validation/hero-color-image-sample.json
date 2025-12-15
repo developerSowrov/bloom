@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "enabled": true,
+    "variant": "carousel",
+    "entries": [
+      {
+        "layout": "image-left",
+        "alignment": "left",
+        "background": {
+          "type": "color",
+          "color": "#FF6B6B"
+        },
+        "heroImage": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/summer-fashion-model.jpg",
+            "alt": "Model wearing summer collection outfit"
+          }
+        },
+        "title": "Summer Sale 2025",
+        "subtitle": "Get up to 50% off on selected summer collection items this week only",
+        "description": "Transform your wardrobe with our stunning summer collection featuring vibrant colors, comfortable fabrics, and trending styles that will keep you cool and stylish all season long.",
+        "cta": {
+          "enabled": true,
+          "entries": [
+            {
+              "label": "Shop Now",
+              "url": "https://example.com/summer-sale",
+              "variant": "primary"
+            },
+            {
+              "label": "View Collection",
+              "url": "https://example.com/collections/summer",
+              "variant": "outline"
+            }
+          ]
+        }
+      },
+      {
+        "layout": "full-width",
+        "alignment": "center",
+        "background": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/hero-fashion-banner.jpg",
+            "alt": "Fashion model wearing elegant evening wear on runway"
+          },
+          "overlay": {
+            "enabled": true,
+            "opacity": 0.4,
+            "color": "#000000"
+          }
+        },
+        "heroImage": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/elegant-dress-product.jpg",
+            "alt": "Elegant evening dress on display"
+          }
+        },
+        "title": "Elegance Redefined",
+        "subtitle": "Discover timeless pieces that elevate your style and confidence every day",
+        "description": "Our curated collection brings together classic sophistication and modern trends, offering you pieces that transition seamlessly from day to night, work to weekend.",
+        "cta": {
+          "enabled": true,
+          "entries": [
+            {
+              "label": "Explore Collection",
+              "url": "https://example.com/collections/elegant",
+              "variant": "secondary"
+            }
+          ]
+        }
+      },
+      {
+        "layout": "split",
+        "alignment": "right",
+        "background": {
+          "type": "color",
+          "color": "#4ECDC4"
+        },
+        "heroImage": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/new-arrivals-showcase.jpg",
+            "alt": "Latest fashion arrivals display"
+          }
+        },
+        "title": "Fresh Arrivals Just Landed",
+        "subtitle": "Be among the first to discover our latest fashion-forward designs",
+        "description": "This week's new arrivals feature bold patterns, luxurious textures, and innovative designs that push boundaries while maintaining everyday wearability. Limited stock available.",
+        "cta": {
+          "enabled": true,
+          "entries": [
+            {
+              "label": "See What's New",
+              "url": "https://example.com/new-arrivals",
+              "variant": "primary"
+            },
+            {
+              "label": "Join Waitlist",
+              "url": "https://example.com/waitlist",
+              "variant": "link"
+            }
+          ]
+        }
+      },
+      {
+        "layout": "image-right",
+        "alignment": "left",
+        "background": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/sustainable-fashion-hero.jpg",
+            "alt": "Eco-friendly sustainable fashion collection displayed naturally"
+          },
+          "overlay": {
+            "enabled": true,
+            "opacity": 0.2,
+            "color": "#2C5F2D"
+          }
+        },
+        "heroImage": {
+          "type": "image",
+          "image": {
+            "url": "https://example.com/images/sustainable-clothing-product.jpg",
+            "alt": "Eco-friendly organic cotton clothing"
+          }
+        },
+        "title": "Sustainable Style, Conscious Choice",
+        "subtitle": "Fashion that cares for you and the planet with ethically sourced materials",
+        "description": "Join us in creating a better future through fashion. Our sustainable collection features organic fabrics, ethical production, and timeless designs that reduce waste while maximizing style.",
+        "cta": {
+          "enabled": true,
+          "entries": [
+            {
+              "label": "Shop Sustainable",
+              "url": "https://example.com/sustainable",
+              "variant": "primary"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
