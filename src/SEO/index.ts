@@ -1,5 +1,5 @@
-export const PageTitlePrefix: string = "XShop | ";
-const description = "XShop - Coded by Ali Shariatian";
+export const PageTitlePrefix: string = "Bloom | ";
+const description = "Bloom - Coded by Apidoxy";
 
 export const staticPageMetadata = {
    home: { title: `${PageTitlePrefix} Online store`, desc: description },
